@@ -1,5 +1,3 @@
-# Docker Swarm
-
 # Projeto Inovatech ChromeCluster.
 
 Guia como transformar o Chromebook em um worker de Docker Swarm utilizando Ubuntu Server.
