@@ -22,6 +22,9 @@ Conteudo esperado:
 - Acesso aos modos de boot e recuperacao
 - Instalar/validar firmware custom (MrChromebox)
 
+Referencia:
+- [Como desbloquear os chromebooks.](./docs/01-Desbloquear_Chromebooks.md)
+
 Status: em construcao
 
 ## Modulo 02 - Criar ISO Ubuntu com pre-requisitos
@@ -41,9 +44,6 @@ Objetivo: instalar o Ubuntu Server e validar o funcionamento inicial do hardware
 
 Conteudo atual:
 - Guia inicial em docs com o passo a passo de instalacao
-
-Referencia:
-- [Como instalar Ubuntu Server no ChromeBook](./docs/Como%20instalar%20Ubuntu%20Server%20no%20ChromeBook.md)
 
 Status: em andamento
 
