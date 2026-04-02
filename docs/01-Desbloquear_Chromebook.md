@@ -5,27 +5,28 @@ Guia de como desbloquear e liberar o firmware do chromebook para a instalção d
 
 ## Primeiros passos:
 
-1. ### Liberar a trava de Hardware.
+### Liberar a trava de Hardware
 
-	1.1<br/>
-	- Remova os parafusos da traseira do notebook<br/>
-		**[Imagem Parafusos Traseiros]**<br/>
-	1.2<br/>
-   	- Desencaixe a tampa traseira puxando no vão da conexão com o monitor.<br/>
-		**[Imagem Vão Trazeiro]**<br/>
-	1.3<br/>
-   	- Remova a capa metálica dos conectores (Amarelo), os parafusos da placa mãe (Vermelho) e os cabos conectados (Verde).<br/>
-		**[Imagem da placa de cima / em destaque: chapa metálica, parafusos e cabos]**<br/>
-	1.4<br/>
-   	- Remova o parafuso que faz a trava de hardware de trás da placa mãe.<br/>
+1. **Remova os parafusos da traseira do notebook.**  
+   **[Imagem Parafusos Traseiros]**
 
-![Foto tirada no inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)
-![Foto Extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+2. **Desencaixe a tampa traseira** puxando no vão da conexão com o monitor.  
+   **[Imagem Vão Traseiro]**
 
-	1.5<br/>
-	- Remonte tudo e siga para o proximo passo.
+3. **Remova a capa metálica e solte a placa:**  
+   - Remova a capa metálica dos conectores (**amarelo**);  
+   - Remova os parafusos da placa-mãe (**vermelho**);  
+   - Desconecte os cabos (**verde**).  
+   **[Imagem da placa de cima / em destaque: chapa metálica, parafusos e cabos]**
 
-2. ### Resetar o MDM (Mobile Device Management)
+4. **Remova o parafuso da trava de hardware** (na parte de trás da placa-mãe).
+
+   ![Foto tirada no inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)  
+   ![Foto Extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+
+5. **Remonte tudo** e siga para o próximo passo.
+
+### Resetar o MDM (Mobile Device Management)
 
 Para resetar o MDM (Mobile Device Management), precisamos fazer login com a conta google abaixo e seguir os passos seguintes:  
 	
