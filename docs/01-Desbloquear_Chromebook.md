@@ -1,11 +1,15 @@
-# Projeto Inovatech ChromeCluster.
+# // Inovatech | ChromeCluster. (Em Desenvolvimento)
 
 ## Guia da pré instalação dos chromebooks.
 Guia de como desbloquear e liberar o firmware do chromebook para a instalção de outros sistemas operacionais.
 
-## Primeiros passos:
+## Passo a passo:
+  - [Trava de Hardware](#//-liberar-a-trava-de-hardware)
+  - [Modo Desenvolvedor](#//-entrando-em-modo-desenvolvedor)
+  - [Powerwash]()
+  - etc...
 
-### Liberar a trava de Hardware
+### // Liberar a trava de Hardware
 
 1. **Remova os parafusos da traseira do notebook.**  
    **[Imagem Parafusos Traseiros]**
@@ -26,7 +30,9 @@ Guia de como desbloquear e liberar o firmware do chromebook para a instalção d
 
 5. **Remonte tudo** e siga para o próximo passo.
 
-### Resetar o MDM (Mobile Device Management)
+### // Entrando em [Modo Desenvolvedor](https://docs.mrchromebox.tech/docs/boot-modes/developer.html)
+
+### // Resetar o MDM (Mobile Device Management)
 
 Para resetar o MDM (Mobile Device Management), precisamos fazer login com a conta google abaixo e seguir os passos seguintes:  
 	
