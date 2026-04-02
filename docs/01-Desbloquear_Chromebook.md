@@ -1,19 +1,29 @@
 # Projeto Inovatech ChromeCluster.
 
-Guia como transformar o Chromebook em um worker de Docker Swarm utilizando Ubuntu Server.
-
-Versão do Ubuntu Server: [Ubuntu Server 24.04.4 LTS](https://releases.ubuntu.com/24.04/ubuntu-24.04.4-live-server-amd64.iso.torrent) (Link do .torrent)  
-Custom Core Boot: [MrChromebox](%20https://docs.mrchromebox.tech/docs/getting-started.html) (Link da Documentação)  
-Docker…
+## Guia da pré instalação dos chromebooks.
+Guia de como desbloquear e liberar o firmware do chromebook para a instalção de outros sistemas operacionais.
 
 ## Primeiros passos:
 
 1. ### Liberar a trava de Hardware.
 
-Abra o notebook, tire os cabos flat da placa mãe, pode deixar o do monitor, desparafuse a placa mãe, e por baixo dela, remova o parafuso prata na localização indicada nas fotos e remonte o aparelho.
+	1.1<br/>
+	- Remova os parafusos da traseira do notebook<br/>
+		**[Imagem Parafusos Traseiros]**<br/>
+	1.2<br/>
+   	- Desencaixe a tampa traseira puxando no vão da conexão com o monitor.<br/>
+		**[Imagem Vão Trazeiro]**<br/>
+	1.3<br/>
+   	- Remova a capa metálica dos conectores (Amarelo), os parafusos da placa mãe (Vermelho) e os cabos conectados (Verde).<br/>
+		**[Imagem da placa de cima / em destaque: chapa metálica, parafusos e cabos]**<br/>
+	1.4<br/>
+   	- Remova o parafuso que faz a trava de hardware de trás da placa mãe.<br/>
 
 ![Foto tirada no inovatech](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/notebook_aberto.jpeg)
 ![Foto Extraída da wiki do MrChromebox](../images/docs/Como_instalar_Ubuntu_Server_no_ChromeBook/verso_placa_mae.jpeg)
+
+	1.5<br/>
+	- Remonte tudo e siga para o proximo passo.
 
 2. ### Resetar o MDM (Mobile Device Management)
 
