@@ -64,6 +64,10 @@ Conteudo esperado:
 - Criacao de pendrive bootavel
 - Lista de pre-requisitos (rede, disco, usuario, SSH, Docker)
 
+Guia detalhado:
+
+- [Abrir guia do Modulo 02](./docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md)
+
 ## Modulo 03 - Instalar Ubuntu Server no Chromebook
 
 Objetivo: instalar o Ubuntu Server e validar o funcionamento inicial do hardware.
