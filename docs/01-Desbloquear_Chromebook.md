@@ -27,10 +27,10 @@ Remover bloqueios fisicos e de firmware para preparar o equipamento para a insta
 ## 1. Liberar a trava de hardware
 
 1. **Remova os parafusos da tampa traseira do notebook.**
-   [Imagem parafusos traseiros]
+![Imagem parafusos traseiros](../images/docs/01/parafusos_traseiros.jpg)
 
 2. **Desencaixe a tampa traseira** puxando no vao da conexao com o monitor.
-   [Imagem vao traseiro]
+![Imagem vao traseiro](../images/docs/01/vao_de_abertura.jpg)
 
 3. **Remova a capa metalica e solte a placa:**
    - Remova a capa metalica dos conectores (amarelo).
@@ -39,7 +39,7 @@ Remover bloqueios fisicos e de firmware para preparar o equipamento para a insta
 
 > Atenção: nao remova o cabo do monitor. Esse cabo e fragil e pode romper com facilidade.
 
-[Imagem da placa de cima com destaque para chapa metalica, parafusos e cabos]
+![Imagem da placa de cima com destaque para chapa metalica, parafusos e cabos](../images/docs/01/visao_interna.jpg)
 
 4. **Remova o parafuso da trava de hardware** (na parte traseira da placa-mae).
 
