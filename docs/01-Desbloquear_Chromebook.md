@@ -105,17 +105,19 @@ Neste módulo desbloquearemos o firmware do Chromebook utilizando o [MrChromebox
 
 1. Com o Chromebook conectado ao Wi-Fi, pressione **Ctrl + Alt + F2** (no teclado do Chromebook, F2 é a seta para a direita "→") para abrir o terminal.
 
-2. No terminal, digite o comando abaixo para baixar e executar o script de desbloqueio:
+2. No terminal vai pedir um usuário, digite "chronos" e de ENTER
+
+3. No terminal, digite o comando abaixo para baixar e executar o script de desbloqueio:
 
    ```bash
    curl -LOf https://mrchromebox.tech/firmware-util.sh && sudo bash firmware-util.sh
    ```
 
-3. No menu da ferramenta Firmware-Util, selecione a opção **2** e pressione **ENTER**. Responda às perguntas da seguinte forma:
+4. No menu da ferramenta Firmware-Util, selecione a opção **2** e pressione **ENTER**. Responda às perguntas da seguinte forma:
    - Primeira pergunta: **Y**
    - Segunda pergunta: **Y**
    - Terceira pergunta: **N**
 
-4. Aguarde a finalização do script. Ao retornar ao menu principal, pressione **P** para desligar o dispositivo.
+5. Aguarde a finalização do script. Ao retornar ao menu principal, pressione **P** para desligar o dispositivo.
 
 Pronto — seu Chromebook está desbloqueado! ✅
