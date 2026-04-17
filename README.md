@@ -11,104 +11,86 @@ status: em-desenvolvimento
 
 # Inovatech ChromeCluster
 
-![Primeira logo do projeto](./images/logo.png)
+![Logo do projeto](./images/logo.png)
 
-Projeto academico para transformar Chromebooks em nos de um cluster Docker Swarm.
+Projeto academico do Inovatech/Unipar para reaproveitar Chromebooks Samsung como nós de um cluster [Docker Swarm](https://docs.docker.com/engine/swarm/) para uso em laboratorio e atividades de ensino.
 
-## Visao geral
+## O que ja existe no repositorio
 
-O projeto esta organizado em modulos progressivos, desde o desbloqueio do hardware ate a operacao do cluster em producao academica.
+- Documentacao do modulo 01 (desbloqueio de Chromebook)
+- Documentacao dos modulos 02 a 06 (ISO, instalacao, manager, workers e operacao)
+- Diagramas de fluxo e sequencia do processo completo
+- Script de automacao para preparar no worker e entrar no Swarm
 
-## Sumario de modulos
+## Estrutura rapida
 
-1. [Modulo 01 - Desbloquear Chromebook](#modulo-01---desbloquear-chromebook)
-2. [Modulo 02 - Criar ISO Ubuntu com pre-requisitos](#modulo-02---criar-iso-ubuntu-com-pre-requisitos)
-3. [Modulo 03 - Instalar Ubuntu Server no Chromebook](#modulo-03---instalar-ubuntu-server-no-chromebook)
-4. [Modulo 04 - Configurar Docker Swarm pai (manager)](#modulo-04---configurar-docker-swarm-pai-manager)
-5. [Modulo 05 - Adicionar workers no cluster](#modulo-05---adicionar-workers-no-cluster)
-6. [Modulo 06 - Operacao, monitoramento e manutencao](#modulo-06---operacao-monitoramento-e-manutencao)
+- Guia institucional do projeto: [INOVATECH.md](./INOVATECH.md)
+- Diagramas: [DIAGRAMA.MD](./DIAGRAMA.MD)
+- Modulo 01: [docs/01-Desbloquear_Chromebook.md](./docs/01-Desbloquear_Chromebook.md)
+- Modulo 02: [docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md](./docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md)
+- Modulo 03: [docs/03-Instalar_Ubuntu_Server_no_Chromebook.md](./docs/03-Instalar_Ubuntu_Server_no_Chromebook.md)
+- Modulo 04: [docs/04-Configurar_Docker_Swarm_Manager.md](./docs/04-Configurar_Docker_Swarm_Manager.md)
+- Modulo 05: [docs/05-Adicionar_Workers_no_Cluster.md](./docs/05-Adicionar_Workers_no_Cluster.md)
+- Modulo 06: [docs/06-Operacao_Monitoramento_e_Manutencao.md](./docs/06-Operacao_Monitoramento_e_Manutencao.md)
+- Script worker: [scripts/setup_worker.sh](./scripts/setup_worker.sh)
 
-## Status rapido
+## Roadmap de modulos
 
-| Modulo | Status |
-| --- | --- |
-| Modulo 01 | Em andamento |
-| Modulo 02 | Planejado |
-| Modulo 03 | Em andamento |
-| Modulo 04 | Planejado |
-| Modulo 05 | Planejado |
-| Modulo 06 | Planejado |
+| Modulo | Objetivo | Status atual |
+| --- | --- | --- |
+| Modulo 01 - Desbloquear Chromebook | Liberar hardware e firmware para boot externo | Em andamento (guia detalhado disponivel) |
+| Modulo 02 - Criar ISO Ubuntu com pre-requisitos | Preparar instalacao com suporte a Wi-Fi e pacotes base | Em andamento (guia inicial disponivel) |
+| Modulo 03 - Instalar Ubuntu Server | Instalar e validar o sistema base nos Chromebooks | Em andamento (guia disponivel) |
+| Modulo 04 - Configurar no manager | Inicializar o Docker Swarm e definir padroes | Em andamento (guia disponivel) |
+| Modulo 05 - Adicionar workers | Conectar e validar todos os nos no cluster | Em andamento (guia e script disponiveis) |
+| Modulo 06 - Operacao e manutencao | Definir rotina de update, monitoramento e backup | Em andamento (guia disponivel) |
 
-## Modulo 01 - Desbloquear Chromebook
+## Fluxo resumido do projeto
 
-Objetivo: remover bloqueios fisicos e de firmware para permitir boot customizado.
+1. Desmontar o Chromebook e remover write-protect.
+2. Fazer Powerwash e liberar acesso ao modo desenvolvedor.
+3. Instalar firmware custom do MrChromebox.
+4. Criar midia Ubuntu Server customizada com suporte de rede.
+5. Instalar Ubuntu Server no dispositivo.
+6. Subir manager Swarm e gerar token.
+7. Provisionar workers e validar cluster.
 
-Conteudo atual:
+Consulte os diagramas em [DIAGRAMA.MD](./DIAGRAMA.MD) para visualizar o fluxo completo.
 
-- Liberacao da trava de hardware
-- Etapa de Powerwash
-- Entrada em modo desenvolvedor
-- Estrutura inicial da secao de firmware custom
+## Script de setup de worker
 
-Guia detalhado:
+O repositorio possui um script de automacao para preparar um no worker Ubuntu e efetuar join no Swarm:
 
-- [Abrir guia do Modulo 01](./docs/01-Desbloquear_Chromebook.md)
+- Arquivo: [scripts/setup_worker.sh](./scripts/setup_worker.sh)
+- Funcoes principais:
+  - Atualizacao do sistema e instalacao de dependencias
+  - Instalacao/configuracao do Docker
+  - Otimizacoes para hardware limitado (swap off, zram, sysctl)
+  - Configuracao de firewall e fail2ban
+  - Join automatico no cluster
 
-## Modulo 02 - Criar ISO Ubuntu com pre-requisitos
+Uso basico:
 
-Objetivo: preparar midia de instalacao do Ubuntu Server com os pacotes e configuracoes base do projeto.
+```bash
+sudo bash scripts/setup_worker.sh --token <TOKEN_SWARM> --manager <IP_MANAGER>
+```
 
-Conteudo esperado:
+Opcionalmente, suporta NFS:
 
-- Download e validacao da ISO oficial
-- Criacao de pendrive bootavel
-- Lista de pre-requisitos (rede, disco, usuario, SSH, Docker)
+```bash
+sudo bash scripts/setup_worker.sh --token <TOKEN_SWARM> --manager <IP_MANAGER> --nfs <IP_NFS>
+```
 
-Guia detalhado:
+## Referencias tecnicas
 
-- [Abrir guia do Modulo 02](./docs/02-Criar_ISO_Ubuntu_com_pre-requisitos.md)
+- [MrChromebox](https://docs.mrchromebox.tech)
+- [Docker Swarm](https://docs.docker.com/engine/swarm/)
+- [Ubuntu Server](https://ubuntu.com/server/docs)
 
-## Modulo 03 - Instalar Ubuntu Server no Chromebook
+## Proximos passos recomendados
 
-Objetivo: instalar o Ubuntu Server e validar o funcionamento inicial do hardware.
-
-Conteudo atual:
-
-- Guia inicial em docs com o passo a passo de instalacao
-
-## Modulo 04 - Configurar Docker Swarm pai (manager)
-
-Objetivo: criar o no principal do Swarm e definir padroes de rede e seguranca.
-
-Conteudo esperado:
-
-- Instalacao do Docker Engine
-- Inicializacao do cluster com docker swarm init
-- Geracao de token de worker e boas praticas de acesso
-
-## Modulo 05 - Adicionar workers no cluster
-
-Objetivo: conectar os Chromebooks ao Swarm como workers e validar a comunicacao.
-
-Conteudo esperado:
-
-- Processo de join de cada worker
-- Validacoes com docker node ls e deploy de teste
-- Checklist de troubleshooting
-
-## Modulo 06 - Operacao, monitoramento e manutencao
-
-Objetivo: padronizar atualizacoes, observabilidade e recuperacao de falhas.
-
-Conteudo esperado:
-
-- Rotina de atualizacao dos nos
-- Monitoramento basico de servicos
-- Backup e plano de contingencia
-
-## Proximos passos sugeridos
-
-1. Finalizar a secao de firmware custom no Modulo 01.
-2. Criar o guia completo do Modulo 02.
-3. Adicionar checklist de validacao ao fim de cada modulo.
+1. Revisar o modulo 02 (prints e passos faltantes).
+2. Executar os novos guias dos modulos 03 a 06 em bancada e ajustar detalhes de campo.
+3. Padronizar capturas de tela para os modulos 03, 04, 05 e 06.
+4. Adicionar uma secao de FAQ com erros recorrentes do laboratorio.
 
