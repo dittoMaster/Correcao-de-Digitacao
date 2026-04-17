@@ -255,6 +255,16 @@ else
 fi
 
 # -----------------------------------------------------------------------------
+# 8. Desabilitar suspensão ao fechar a tampa
+# -----------------------------------------------------------------------------
+sudo cp /etc/systemd/logind.conf /etc/systemd/logind.conf.bak && \
+sudo sed -i 's/^#\?HandleLidSwitch=.*/HandleLidSwitch=ignore/' /etc/systemd/logind.conf && \
+sudo sed -i 's/^#\?HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/' /etc/systemd/logind.conf && \
+sudo sed -i 's/^#\?HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/' /etc/systemd/logind.conf && \
+sudo systemctl restart systemd-logind && \
+echo "Lid switch desabilitado para evitar suspensão ao fechar a tampa." | tee -a "$LOG_FILE"
+
+# -----------------------------------------------------------------------------
 # RESUMO FINAL
 # -----------------------------------------------------------------------------
 RAM_TOTAL=$(free -m | awk '/^Mem:/{print $2}')
