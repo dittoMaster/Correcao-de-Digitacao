@@ -12,7 +12,7 @@ status: em-desenvolvimento
 # Inovatech ChromeCluster
 
 <p align="center">
-  <img src="./images/logo.png" alt="Logo do projeto" width="180" />
+  <img src="./images/logo.png" alt="Logo do projeto" width="400" />
 </p>
 
 <p align="center">
