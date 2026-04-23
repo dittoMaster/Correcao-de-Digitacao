@@ -77,7 +77,7 @@ Neste passo entraremos no modo de recuperação do dispositivo para ativar o Mod
 
 **Passo a passo:**
 
-1. Inicie o Chromebook em modo de recuperação pressionando **Ctrl + Refresh + Power**, conforme a imagem:
+1. Inicie o Chromebook em modo de recuperação pressionando **ESC + Refresh + Power**, conforme a imagem:
 
    ![Imagem extraída da wiki do MrChromebox](../images/docs/01/recovery-keyboard-hint.png)
 
